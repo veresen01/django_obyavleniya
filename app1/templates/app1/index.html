@@ -1,0 +1,15 @@
+{% extends "app1/base.html" %}
+{% block content %}
+{% for p in post %}
+<div>
+    <h2>{{ p.title }}</h2>
+    <p>{{ p.content }}</p>
+    <p><a href="{% url 'rubric_post' p.rubric.pk %}">
+        {{ p.rubric.name }}</a></p>
+    <p>{{ p.published|date:"d.m.Y H:i:s" }}</p>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+
